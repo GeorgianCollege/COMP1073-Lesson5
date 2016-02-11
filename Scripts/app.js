@@ -3,8 +3,51 @@
 // setup your IIFE (Immediately Invoked Function Expression)
 (function () {
 
+
+    var paragraphData = [{"paragraph":"First Paragraph Stuff"}, 
+                        {"paragraph":"Second Paragraph Stuff"},
+                        {"paragraph":"Third Paragraph Stuff"},
+                        {"paragraph":"Fourth Paragraph Stuff"}];
+
     console.log("App Started..."); 
   
+  /* the ugly way
+    console.log(paragraphData[1]);
+    console.log(paragraphData[1]);
+    console.log(paragraphData[2]);
+    console.log(paragraphData[0]);
+    console.log(paragraphData[5]);
+    console.log(paragraphData[6]);
+  */
+  
+    // a little nicer but counting up
+    
+    var paragraphDataLength = paragraphData.length;
+    for(var index= 0; index < paragraphDataLength; index++) {
+        console.log(paragraphData[index].paragraph);
+    }
+    
+    var button = document.getElementById("Button1");
+    
+    button.addEventListener("click", function(){
+        // execute stuff here after button click
+        console.log("Clicked!!");
+    });
+    
+   
+     // a little nicer but counting down
+    /*
+    for(var index= paragraphData.length-1; index > -1; index--) {
+        console.log(paragraphData[index]);
+    }
+    */
+    
+    
+    /* even nicer but more complicated
+    paragraphData.forEach(function(paragraph) {
+        console.log(paragraph);
+    });
+    */
   
     //declared a named function way
 
@@ -15,22 +58,13 @@
         firstParagraph = document.getElementById("firstParagraph");
 
         firstParagraph.innerHTML = "My New Paragraph Data";
+        
     }
 
-    /*
-    // declare an anonymous function with named alias
-    var replaceFirstParagraph = function() {
-        console.log("inside replaceFirstParagraph anonymous function");
-        var firstParagraph;
-
-        firstParagraph = document.getElementById("firstParagraph");
-
-        firstParagraph.innerHTML = "My New Paragraph Data";
-    };
-    */
    
     // call the replaceFirstParagraph function
     replaceFirstParagraph();
 
 
 })();
+
