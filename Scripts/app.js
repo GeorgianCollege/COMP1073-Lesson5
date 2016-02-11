@@ -27,11 +27,14 @@
         console.log(paragraphData[index].paragraph);
     }
     
+    var name = document.getElementById("name");
+    
     var button = document.getElementById("Button1");
     
     button.addEventListener("click", function(){
         // execute stuff here after button click
         console.log("Clicked!!");
+        console.log(name.value);
     });
     
    
